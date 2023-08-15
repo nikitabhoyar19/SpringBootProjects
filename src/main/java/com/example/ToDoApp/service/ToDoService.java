@@ -1,7 +1,7 @@
 package com.example.ToDoApp.service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +20,10 @@ public class ToDoService {
 		repo.findAll().forEach(todo -> todoList.add(todo));
 		
 		return todoList;
+	}
+	
+	public List<ToDo> getList() {
+		return repo.findAll();
 	}
 	
 	public ToDo getToDoItemById(Long id) {
